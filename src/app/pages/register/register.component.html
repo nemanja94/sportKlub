@@ -1,33 +1,33 @@
 <div class="row">
   <div class="colomn my-3 p-3 col-lg-6">
-    <form class="mt-5 bg-dark p-3 rounded shadow text-light">
+    <form role="form" [formGroup]="registerForm" class="mt-5 bg-dark p-3 rounded shadow text-light">
       <div class="form-group">
         <label for="exampleInputEmail1">Ime</label>
-        <input type="text" class="form-control" id="ime" placeholder="Vase ime">
+        <input type="text" class="form-control" id="ime" fomrControlName="firstName" placeholder="Vase ime">
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Prezime</label>
-        <input type="text" class="form-control" id="prezime" placeholder="Vase prezime">
+        <input type="text" class="form-control" id="prezime" formControlName="lastName" placeholder="Vase prezime">
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Korisnicko ime</label>
-        <input type="text" class="form-control" id="korisnickoIme" placeholder="Vase korisnicko ime">
+        <input type="text" class="form-control" id="korisnickoIme" formControlName="username" placeholder="Vase korisnicko ime">
       </div>
       <div class="form-group">
-        <label for="exampleInputEmail1">Email addresa</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Vasa email adresa">
+        <label for="exampleInputEmail1">Email adresa</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email" placeholder="Vasa email adresa">
         <small id="emailHelp" class="form-text text-muted">Vasu email adresu necemo deliti sa drugim clanovima
           SportKlub-a.</small>
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Lozinka</label>
-        <input type="password" class="form-control" id="lozinka" placeholder="Vasa lozinka">
+        <input type="password" class="form-control" id="lozinka" fomrControlName="password" placeholder="Vasa lozinka">
       </div>
       <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="proveraBota">
-        <label class="form-check-label" for="proveraBota">Cekirajte radi provera bota</label>
+        <input type="checkbox" class="form-check-input" id="proveraBota" formControlName="antiBot">
+        <label class="form-check-label" for="proveraBota">Cekirajte radi provere bota</label>
       </div>
-      <button type="submit" class="btn btn-success">Registruj se</button>
+      <button (click)="register()" class="btn btn-success">Registruj se</button>
     </form>
   </div>
   <div class="colomn col-lg-6">
